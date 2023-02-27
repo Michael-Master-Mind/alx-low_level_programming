@@ -1,21 +1,20 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * print_array - prints some elements of an array
- * @a: array
- * @n: number of elements to be printed
+ * _strcpy - copies src into dest
+ * @dest: destination
+ * @src: source
+ *
+ * Return: char pointer to dest
  */
 
-void print_array(int *a, int n)
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; i < n; i++)
-	{
-		printf("%d", a[i]);
-		if (i != n - 1)
-			printf(", ");
-	}
-	printf("\n");
+	for (i = 0; *(src + i) != '\0'; i++)
+		*(dest + i) = *(src + i);
+	*(dest + i) = '\0';
+
+	return (dest);
 }
